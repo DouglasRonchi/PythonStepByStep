@@ -21,11 +21,11 @@ match numbers:
         print("2 is the second number!")
 
 # Veryfing lists with _
-numbers = [1, 10, "3"]
+numbers = [1, 10, "1.0"]
 
 match numbers:
-    case [1, _, _]:
-        print("1 is the first number!")
+    case [_, _, str(_)]:
+        print(f"1 is the first number!")
 
 numbers = [30, 2, 80]
 
@@ -61,7 +61,6 @@ match color:
     case r, g, b, a:
         print(f"Now it's a valid color :P {r=} {g=} {b=} {a=}")
 
-
 # Advanced cases
 def move(action: str):
     match action.lower().split():
@@ -75,11 +74,11 @@ def move(action: str):
             return f'Moving vertically to {direction}'
 
 
-print(move(action="Move"))
+print(move(action="move up"))
 
 # Dictionaries
 
-dictionary = {"a": 1, "b": 2}
+dictionary = {"a": 15, "b": 32}
 # dictionary = {"error": "There is a error in dictionary", "b": 2}
 
 match dictionary:

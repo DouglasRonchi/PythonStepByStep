@@ -31,30 +31,31 @@ git push
 # HandsOn
 """
 Podemos fazer na mão usando yield (É um return, mas diferente, fica aí a pesquisa :P)
-"""
-def cumsum(lis):
-    def acumu(lis):
-        total = 0
-        for x in lis:
-            total += x
-            yield total
-
-    return list(acumu(lis))
-
-
-resultado = cumsum([1, 2, 3])
-
-print(resultado)
+# """
+# def cumsum(lis):
+#     def acumu(lis):
+#         total = 0
+#         for x in lis:
+#             total += x
+#             yield total
+#
+#     return list(acumu(lis))
+#
+#
+# resultado = cumsum([1, 2, 3])
+#
+# print(resultado)
 
 # With NumPy
 """
 Ou podemos usar o pacote numpy - Lembre-se que não precisamos reinventar a roda
-"""
-import numpy as np
-
-resultado_numpy = np.cumsum([1, 2, 3])
-
-print(resultado_numpy)
+Também não podemos matar uma mosca com um canhão !
+# """
+# import numpy as np
+#
+# resultado_numpy = np.cumsum([1, 2, 3])
+#
+# print(resultado_numpy)
 
 # Escreva uma função chamada is_sorted que tome uma
 # lista como parâmetro e retorne True se a lista estiver
@@ -75,13 +76,15 @@ from copy import deepcopy
 lista_sorted = [1, 2, 2]
 lista_non_sorted = ['b', 'a']
 
-def is_sorted(lista: list):
-    lista_de_varificacao = deepcopy(lista)
-    lista.sort()
-    return lista == lista_de_varificacao
-
-print(is_sorted(lista_sorted))
-print(is_sorted(lista_non_sorted))
+# def is_sorted(lista: list):
+#     lista_de_verificacao = deepcopy(lista)
+#     lista.sort()
+#     print(id(lista_de_verificacao))
+#     print(id(lista))
+#     return lista == lista_de_verificacao
+#
+# print(is_sorted(lista_sorted))
+# print(is_sorted(lista_non_sorted))
 
 # Escreva uma função chamada has_duplicates que tome uma lista e retorne True
 # se houver algum elemento que apareça mais de uma vez. Ela não deve modificar a lista original.
@@ -92,10 +95,17 @@ lembre {} é um set, e não aceita duplicados
 {x for x in lista} esse modo é chamado de generators (Uma pesquisa básica já entende o conceito)
 Mas basicamente ele gera um set, uma lista, uma tupla, etc... 
 """
-def remove_duplicates(lista: list):
-    return list({x for x in lista})
+class Pessoa:
+    def __init__(self, nome):
+        self.nome = nome
 
-print(remove_duplicates([1, 2, 2, 3]))
+    # def __repr__(self):
+    #     return self.nome
+
+# def remove_duplicates(lista: list):
+#     return list({object for object in lista})
+#
+# print(remove_duplicates([Pessoa("Douglas"), Pessoa("Vitor")]))
 
 
 """
@@ -104,10 +114,10 @@ O len da lista
 E o len dessa mesma lista transformada em set() (Que não aceita duplicados)
 Se for diferente é por que tinha duplicados :)
 """
-def has_duplicates(lista: list):
-    return len(lista) != len(set(lista))
-
-print(has_duplicates([1, 2, 2, 3]))
+# def has_duplicates(lista: list):
+#     return len(lista) != len(set(lista))
+#
+# print(has_duplicates([1, 2, 2, 3]))
 
 # Crie um dicionário que guarda 4 notas de alunos, e faça a média dessas notas
 
