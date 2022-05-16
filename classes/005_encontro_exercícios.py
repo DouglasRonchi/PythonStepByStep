@@ -45,7 +45,6 @@ while True:
             if not alterado:
                 print(f"Id {id_cliente} não encontrado!")
         case "4":
-            # TODO Desfio Achar o erro:
             print("Deletar um cliente")
             id_cliente = input("Digite o id do cliente que deseja deletar: ").strip()
             deletado = None
