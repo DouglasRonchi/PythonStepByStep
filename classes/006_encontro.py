@@ -14,12 +14,12 @@ resultado = numero_dois_float / numero__um_float
 
 
 # Chamar função e seu retorno / ou não | Escopo de variaveis
-# def chamar_funcao(number: int) -> List:
-#     match number:
-#         case 1:
-#             return []
-#         case _:
-#             return []
+def chamar_funcao(number: int) -> List:
+    match number:
+        case 1:
+            return []
+        case _:
+            return []
 #
 # print(chamar_funcao(1))
 
